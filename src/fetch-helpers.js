@@ -25,3 +25,4 @@ export const getRandom10Pokemon = async () => {
     }
 }
 
+getRandom10Pokemon().then(data => console.log(data))
