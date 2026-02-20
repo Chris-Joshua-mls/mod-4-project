@@ -1,6 +1,6 @@
 const pokeList = document.querySelector('#poke-list')
 
-export const renderPokemon = (pokemon) => {
+export const mainPageRenderPokemon = (pokemon) => {
     pokemon.forEach(mon => {
         console.log(mon)
         const li = document.createElement('li')
