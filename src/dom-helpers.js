@@ -1,6 +1,25 @@
 import { getMoveData, getTypeWeakness } from "./fetch-helpers.js";
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const renderPokemon = async (pokemon) => {
   const pokeInfo = document.querySelector('#poke-info');
   const aside = document.querySelector('#typing');
