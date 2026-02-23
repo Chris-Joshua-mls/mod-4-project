@@ -1,6 +1,8 @@
 import { getMoveData, getPokemon } from "./fetch-helpers.js";
 import { renderMoveDetails, renderPokemon } from "./dom-helpers.js";
 const movesList = document.querySelector('#moves-list');
+const button = document.querySelector('#sound');
+const sound = document.querySelector('#myAudio');
 
 
 getPokemon('eevee').then(({ data }) => {
@@ -19,3 +21,12 @@ movesList.addEventListener('click', (event) => {
   });
 });
 
+button.addEventListener('click', () => {
+  getPokemon('eevee').then(({ data }) => {
+    if (data === null) {
+      return;
+    }
+    const cry = new Audio(`${data.cries.latest}`)
+    cry.play();
+  })
+})
