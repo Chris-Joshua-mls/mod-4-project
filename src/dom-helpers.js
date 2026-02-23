@@ -6,14 +6,14 @@ export const mainPageRenderPokemon = (pokemon) => {
         const li = document.createElement('li')
         const sprite = document.createElement('img')
         const name = document.createElement('h3')
-        const types = document.createElement('p')
+        const number = document.createElement('p')
 
         sprite.src = mon.sprites.front_default
         sprite.alt = mon.name
         name.textContent = mon.name
-        types.textContent = mon.types.map((type) => type.type.name).join(", ")
+        number.textContent = `No. ${String(mon.order).padStart(4, "0")}`
 
-        li.append(sprite, name, types)
+        li.append(sprite, number, name)
         pokeList.append(li)
     })
 }
