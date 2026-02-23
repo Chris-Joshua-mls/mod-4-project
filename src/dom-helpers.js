@@ -20,14 +20,35 @@ export const mainPageRenderPokemon = (pokemon) => {
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const renderPokemon = async (pokemon) => {
   const pokeInfo = document.querySelector('#poke-info');
   const aside = document.querySelector('#typing');
   const movesList = document.querySelector('#moves-list');
+  const detailsSection = document.querySelector('#move-info');
 
   pokeInfo.innerHTML = '';
   aside.innerHTML = '';
   movesList.innerHTML = '';
+  detailsSection.innerHTML = '';
 
   // poke info
 
@@ -53,7 +74,7 @@ export const renderPokemon = async (pokemon) => {
     movesUl.appendChild(li);
   })
   details.append(summary, movesUl)
-  aside.append(details);
+  movesList.append(details);
 
   // poke aside
 
@@ -106,13 +127,15 @@ export const renderMoveDetails = async (moveName) => {
   h4.textContent = data.name;
 
   const h5 = document.createElement('h5');
-  h5.textContent = `Accuracy: ${data.accuracy}| Damage Type: ${data.damage_class.name}`;
+  h5.textContent = `Accuracy: ${data.accuracy} | Damage Type: ${data.damage_class.name} | Type: ${data.type.name}`;
 
   const effect = document.createElement('p');
-  effect.textContent = `Effect: ${data.effect_entries[1].effect}`;
+  const lan = data.effect_entries.findLastIndex((eng) => eng.language.name === "en")
+  effect.textContent = `Effect: ${data.effect_entries[lan]?.effect ?? 'No effect data available'}`;
 
   const flavorText = document.createElement('p');
-  flavorText.textContent = data.flavor_text_entries[flavor_text_entries.length - 1].flavor_text;
+  const last = data.flavor_text_entries.findLastIndex((eng) => eng.language.name === "en")
+  flavorText.textContent = last !== undefined ? data.flavor_text_entries[last].flavor_text : "No description available";
 
   detailsSection.append(h4, h5, effect, flavorText);
 };

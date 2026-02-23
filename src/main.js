@@ -1,6 +1,7 @@
 import { getRandom10Pokemon, getMoveData, getPokemon } from './fetch-helpers.js'
 import { mainPageRenderPokemon, renderMoveDetails, renderPokemon } from './dom-helpers.js'
 const movesList = document.querySelector('#moves-list');
+const button = document.querySelector('#sound');
 
 getRandom10Pokemon().then((pokemon) => {
     if (pokemon.error) {
@@ -25,3 +26,13 @@ movesList.addEventListener('click', (event) => {
     renderMoveDetails(data.name)
   });
 });
+
+button.addEventListener('click', () => {
+  getPokemon('eevee').then(({ data }) => {
+    if (data === null) {
+      return;
+    }
+    const cry = new Audio(`${data.cries.latest}`)
+    cry.play();
+  })
+})
