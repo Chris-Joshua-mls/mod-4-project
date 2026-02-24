@@ -19,8 +19,12 @@
   </header>
   <main>
     <h1>Poke-Buddies</h1>
-    <form></form>
-    <a href="info.html">check it</a>
+    <form id="poke-search" action="info.html" method="get">
+      <div>
+        <input id="poke-search-input" type="search" name="search" placeholder="Search by name or id" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
     <ul id="poke-list"></ul>
   </main>
   <script type="module" src="/src/main.js"></script>

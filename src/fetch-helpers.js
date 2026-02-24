@@ -50,11 +50,12 @@ export const getRandomPokemon = async () => {
 export const getPokemonByName = (name) => {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((response) => {
-      if (!response.ok) return;
+      if (!response.ok) return { data: null, error: 'Not Found' };
 
       return response.json()
     })
     .then((data) => {
+      if (data && data.error) return data;
       return { data: data, error: null }
     })
     .catch((error) => {
