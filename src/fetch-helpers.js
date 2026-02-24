@@ -25,6 +25,28 @@ export const getRandom10Pokemon = async () => {
   }
 }
 
+export const getRandomPokemon = async () => {
+  try {
+    const id = Math.ceil(Math.random() * 1024)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    if (!response.ok) {
+      throw Error('Fetch Failed')
+    }
+    const data = await response.json()
+
+    return {
+      data,
+      error: null
+    }
+  }
+  catch (error) {
+    return {
+      data: null,
+      error
+    }
+  }
+}
+
 export const getPokemonByName = (name) => {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((response) => {
@@ -103,30 +125,3 @@ export const getPokemon = (check) => {
     return getPokemonByName('000')
   }
 };
-try {
-  const offset = Math.ceil(Math.random() * 1340)
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`)
-  if (!response.ok) {
-    throw Error('Fetch Failed')
-  }
-  const data = await response.json()
-
-  const pokePromises = data.results.map(async pokemon => {
-    const res = await fetch(pokemon.url)
-    return res.json()
-  })
-  const pokeData = await Promise.all(pokePromises)
-  return {
-    data: pokeData,
-    error: null
-  }
-}
-catch (error) {
-  return {
-    data: null,
-    error
-  }
-}
-
-
-
