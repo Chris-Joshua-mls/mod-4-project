@@ -29,7 +29,7 @@ movesList.addEventListener('click', (event) => {
 
     getMoveData(li.textContent).then(({ data }) => {
         if (data === null) return;
-        renderMoveDetails(data.name)
+        renderMoveDetails(data)
     });
 });
 
