@@ -301,8 +301,22 @@ main {
         grid-template-columns: 1fr;
         grid-template-areas:
             "portrait"
-            "sound"
-            "typing"
+            "right-col"
             "moves";
+    }
+
+    #right-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    #typing {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    #sound {
+        align-self: flex-end;
     }
 }
