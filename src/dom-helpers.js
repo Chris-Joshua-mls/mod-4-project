@@ -91,7 +91,7 @@ export const renderPokemon = async (pokemon) => {
       }
     }
   }
-  aside.append(weakness, weaksUl, pokeType, typesUl)
+  aside.append(pokeType, typesUl, weakness, weaksUl)
 
 };
 
