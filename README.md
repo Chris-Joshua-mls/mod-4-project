@@ -74,7 +74,7 @@ The app will be available at `http://localhost:5173` by default.
 
 ---
 
-## Known Limitations & Future Improvements
+## Future Improvements
 
 - **Evolution chains** — A future improvement would display a Pokémon's full evolution line on the info page, allowing users to navigate between evolutions easily.
 - **Type chart** — A full interactive type effectiveness chart would give users a quick reference for all type matchups without having to look up individual Pokémon.
