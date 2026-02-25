@@ -1,0 +1,1 @@
+import{g as t,m as a}from"./dom-helpers-DwQo02V1.js";const n=document.querySelector("#poke-list");t().then(e=>{e.error?console.log("Failed To Load Pokemon"):a(e.data)});n.addEventListener("click",e=>{const o=e.target.closest("li");window.location.href=`info.html?search=${o.dataset.pokeName}`});
