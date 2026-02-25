@@ -1,7 +1,7 @@
 import { getRandomPokemon, getPokemon, getMoveData } from './fetch-helpers.js'
 import { renderPokemon, renderMoveDetails } from './dom-helpers.js'
 
-const movesList = document.querySelector('#movesUl');
+const movesList = document.querySelector('#moves-list');
 const soundBtn = document.querySelector('#sound');
 
 let currentPokemon = null
@@ -27,7 +27,7 @@ movesList.addEventListener('click', (event) => {
     const li = event.target.closest('li');
     if (!li) return;
 
-    getMoveData(li.textContent).then(({ data }) => {
+    getMoveData(li.dataset.moveName).then(({ data }) => {
         if (data === null) return;
         renderMoveDetails(data)
     });
