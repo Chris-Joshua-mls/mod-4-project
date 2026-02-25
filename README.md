@@ -58,6 +58,12 @@ The app will be available at `http://localhost:5173` by default.
 
 ---
 
+## AI Usage
+
+[View AI Usage Document](https://docs.google.com/document/d/16x53FxCu9GBfpy8uOqa0sjLnO3hYGuVPKNj28Au4jDk/edit?usp=sharing)
+
+---
+
 ## Screenshots
 
 **Home Page**
