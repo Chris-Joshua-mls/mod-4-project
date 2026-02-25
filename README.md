@@ -1,6 +1,6 @@
 # Poke-Buddies
 
-Poke-Buddies is a Pokémon encyclopedia web app that lets users search for any Pokémon by name or ID, browse a randomly generated selection on the home page, and dive into detailed information including moves, types, and weaknesses on a dedicated info page. Built as a module 4 project, the app fetches live data from the PokéAPI and presents it in a clean, responsive interface styled to feel at home in the Pokémon universe.
+Poke-Buddies is a Pokémon encyclopedia web app that lets users search for any Pokémon by name or ID, browse a randomly generated selection on the home page, and dive into detailed information including moves, types, and weaknesses on a dedicated info page. The app fetches live data from the PokéAPI and presents it in a clean, responsive interface styled to feel at home in the Pokémon universe.
 
 **Live Site:** [https://chris-joshua-mls.github.io/mod-4-project/](https://chris-joshua-mls.github.io/mod-4-project/)
 
